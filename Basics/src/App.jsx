@@ -210,25 +210,48 @@
 
 //useCallback  - caching of function
 
-import { useCallback, useState } from "react";
+// import { useCallback, useState } from "react";
+// import "./App.css";
+// import Header from "./Components/Header";
+
+// const App = () => {
+//   const [count, setCount] = useState(0);
+//   const newFn = useCallback(() => {}, []);
+//   return (
+//     <>
+//       <Header newFn={newFn} />
+//       <h1>Count : {count}</h1>
+//       <button
+//         onClick={() => {
+//           setCount((count) => count + 1);
+//         }}
+//       >
+//         Click
+//       </button>
+//     </>
+//   );
+// };
+
+// export default App;
+
+//useContext :- A react Hook that allows you access data
+//from any component without explicitly passing it down through
+//props at any level.
+//manage global data in react app
+
+//steps:-1.Creating the Context,2.Providing the Context,3.Consuming the Context
+
 import "./App.css";
-import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import Profile from "./Components/Profile";
 
 const App = () => {
-  const [count, setCount] = useState(0);
-  const newFn = useCallback(() => {}, []);
   return (
-    <>
-      <Header newFn={newFn} />
-      <h1>Count : {count}</h1>
-      <button
-        onClick={() => {
-          setCount((count) => count + 1);
-        }}
-      >
-        Click
-      </button>
-    </>
+    <div>
+      <Profile />
+      
+      <Footer />
+    </div>
   );
 };
 
