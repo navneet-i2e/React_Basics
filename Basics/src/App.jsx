@@ -170,39 +170,65 @@
 
 //useMemo:- useMemo is a hook that allows you to memoize the result of a function. It will only recompute the result if one of the dependencies has changed.'
 
-import { useState, useMemo } from "react";
+// import { useState, useMemo } from "react";
+// import "./App.css";
+
+// const App = () => {
+//   const [number, setNumber] = useState(0);
+//   const [counter, setCounter] = useState(0);
+
+//   function cubeNum(n) {
+//     console.log("Calculation Done...");
+//     return Math.pow(n, 3);
+//   }
+//   const result = useMemo(() => {
+//     return cubeNum(number);
+//   }, [number]);
+
+//   const increaseCounter = () => {
+//     setCounter((prevCounter) => prevCounter + 1);
+//   };
+//   return (
+//     <div>
+//       <input
+//         type="number"
+//         value={number}
+//         name=""
+//         id=""
+//         onChange={(e) => {
+//           setNumber(e.target.value);
+//         }}
+//       />
+//       <h1>Cube of number is : {result}</h1>
+//       <button onClick={increaseCounter}>Counter++</button>
+//       <h1>Counter : {counter}</h1>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+//useCallback  - caching of function
+
+import { useCallback, useState } from "react";
 import "./App.css";
+import Header from "./Components/Header";
 
 const App = () => {
-  const [number, setNumber] = useState(0);
-  const [counter, setCounter] = useState(0);
-
-  function cubeNum(n) {
-    console.log("Calculation Done...");
-    return Math.pow(n, 3);
-  }
-  const result = useMemo(() => {
-    return cubeNum(number);
-  }, [number]);
-
-  const increaseCounter = () => {
-    setCounter((prevCounter) => prevCounter + 1);
-  };
+  const [count, setCount] = useState(0);
+  const newFn = useCallback(() => {}, []);
   return (
-    <div>
-      <input
-        type="number"
-        value={number}
-        name=""
-        id=""
-        onChange={(e) => {
-          setNumber(e.target.value);
+    <>
+      <Header newFn={newFn} />
+      <h1>Count : {count}</h1>
+      <button
+        onClick={() => {
+          setCount((count) => count + 1);
         }}
-      />
-      <h1>Cube of number is : {result}</h1>
-      <button onClick={increaseCounter}>Counter++</button>
-      <h1>Counter : {counter}</h1>
-    </div>
+      >
+        Click
+      </button>
+    </>
   );
 };
 
