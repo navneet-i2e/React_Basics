@@ -321,27 +321,58 @@
 //used for:-measuring ui elements,animating elements, flickering issue,api calling
 //but react docs suggest to use useEffect because useLayoutEffect can hurt performance of app.
 
-import { useEffect, useLayoutEffect } from "react";
+// import { useEffect, useLayoutEffect } from "react";
 
-import "./App.css";
+// import "./App.css";
 
-const App = () => {
-  useEffect(() => {
-    console.log("Message from useEffect");
-  }, []);
-  useLayoutEffect(() => {
-    console.log("Message from useLayoutEffect");
-  }, []);
-  return (
-    <div>
-      <h1>Test Message</h1>
-      {Array(40000)
-        .fill("")
-        .map((item, index) => (
-          <li key={index}>{Math.pow(Math.random(),10)}</li>
-        ))}
-    </div>
-  );
-};
+// const App = () => {
+//   useEffect(() => {
+//     console.log("Message from useEffect");
+//   }, []);
+//   useLayoutEffect(() => {
+//     console.log("Message from useLayoutEffect");
+//   }, []);
+//   return (
+//     <div>
+//       <h1>Test Message</h1>
+//       {Array(40000)
+//         .fill("")
+//         .map((item, index) => (
+//           <li key={index}>{Math.pow(Math.random(),10)}</li>
+//         ))}
+//     </div>
+//   );
+// };
 
-export default App;
+// export default App;
+
+//A custom hook in React is a reusable function prefixed with use that encapsulates stateful logic using built-in hooks (like useState, useEffect). It allows you to abstract and share functionality across multiple components while maintaining React's rules of hooks.
+
+// import { useState } from "react";
+// import "./App.css";
+// function useCounter(intialValue = 0) {                     //custom hook
+//   const [count, setCount] = useState(intialValue);
+//   const increment = () => {
+//     setCount((count) => count + 1);
+//   };
+//   const decrement = () => {
+//     setCount((count) => count - 1);
+//   };
+//   const reset = () => {
+//     setCount(intialValue);
+//   };
+//   return { count, increment, decrement, reset };
+// }
+// const App = () => {
+//   const { count, increment, decrement, reset } = useCounter(0);
+//   return (
+//     <div>
+//       <h1>Count:{count}</h1>
+//       <button onClick={increment}>Increment</button>
+//       <button onClick={decrement}>Decrement</button>
+//       <button onClick={reset}>Reset</button>
+//     </div>
+//   );
+// };
+
+// export default App;
