@@ -316,4 +316,32 @@
 
 // export default App;
 
+//useLayoutEffect - Similar to useEffect, but it is called before printing the DOM elements.
 
+//used for:-measuring ui elements,animating elements, flickering issue,api calling
+//but react docs suggest to use useEffect because useLayoutEffect can hurt performance of app.
+
+import { useEffect, useLayoutEffect } from "react";
+
+import "./App.css";
+
+const App = () => {
+  useEffect(() => {
+    console.log("Message from useEffect");
+  }, []);
+  useLayoutEffect(() => {
+    console.log("Message from useLayoutEffect");
+  }, []);
+  return (
+    <div>
+      <h1>Test Message</h1>
+      {Array(40000)
+        .fill("")
+        .map((item, index) => (
+          <li key={index}>{Math.pow(Math.random(),10)}</li>
+        ))}
+    </div>
+  );
+};
+
+export default App;
