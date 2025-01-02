@@ -241,18 +241,79 @@
 
 //steps:-1.Creating the Context,2.Providing the Context,3.Consuming the Context
 
-import "./App.css";
-import Footer from "./Components/Footer";
-import Profile from "./Components/Profile";
+// import "./App.css";
+// import Footer from "./Components/Footer";
+// import Profile from "./Components/Profile";
 
-const App = () => {
-  return (
-    <div>
-      <Profile />
-      
-      <Footer />
-    </div>
-  );
-};
+// const App = () => {
+//   return (
+//     <div>
+//       <Profile />
 
-export default App;
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+//useReducer - similar to useState, But instead of
+//provinding state & setter function.it provides state and dispatch function
+
+//useReducer(reducer function(),initialState)
+//returns current state and dispatch function
+//reducer function specifies how the state should change
+
+// import { useReducer } from "react";
+// import "./App.css";
+
+// const App = () => {
+//   //   const [count, setCount] = useState(0);
+//   const initialState = { count: 0 };
+//   const reducer = (state, action) => {
+//     switch (action.type) {
+//       case "INC":
+//         return { count: state.count + 1 };
+//       case "DEC":
+//         return { count: state.count - 1 };
+//       case "input":
+//         return { count: action.payload };
+//       default:
+//         return state;
+//     }
+//   };
+//   const [state, dispatch] = useReducer(reducer, initialState);
+
+//   return (
+//     <div>
+//       <button
+//         onClick={() => {
+//           dispatch({ type: "INC" });
+//         }}
+//       >
+//         Inc
+//       </button>
+//       <h1>Count : {state.count}</h1>
+//       <button
+//         onClick={() => {
+//           dispatch({ type: "DEC" });
+//         }}
+//       >
+//         Dec
+//       </button>
+
+//       <br />
+//       <input
+//         type="number"
+//         onChange={(e) => {
+//           dispatch({ type: "input", payload: Number(e.target.value) });
+//         }}
+//         value={state.count}
+//       />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
